@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Winter Soldier — Blog</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #000000;
+            --text: #ffffff;
+            --muted-text: #d1d5db; /* gray-300 */
+            --border: #1f2937; /* gray-800 */
+            --link: #ffffff;
+            --brand: #ffffff;
+            --accent: #ffffff; /* use white for accents in mono theme */
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --surface: #000000;
+                --text: #ffffff;
+                --muted-text: #d1d5db;
+                --border: #1f2937;
+                --link: #ffffff;
+                --brand: #ffffff;
+                --accent: #ffffff;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+        img, svg { display: block; max-width: 100%; }
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container { width: 100%; max-width: 74rem; margin: 0 auto; padding: 0 1rem; }
+        .header { position: sticky; top: 0; background: color-mix(in oklab, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+        .brand { font-weight: 800; letter-spacing: -0.02em; font-size: 1.125rem; color: var(--brand); }
+        .brand a { color: inherit; }
+        .nav { display: flex; align-items: center; gap: 1rem; }
+        .nav a { color: var(--muted-text); }
+        .login-btn { background: transparent; color: var(--accent); padding: .5rem .9rem; border-radius: 10px; border: 1px solid var(--accent); font-weight: 700; }
+        .login-btn:hover { background: var(--accent); color: #000; text-decoration: none; }
+
+        .hero { padding: 3.5rem 0 2rem; }
+        .hero h1 { font-size: clamp(2.25rem, 6vw, 3rem); line-height: 1.1; margin: 0 0 .5rem; letter-spacing: -0.02em; }
+        .hero p { margin: 0; color: var(--muted-text); max-width: 65ch; }
+
+        .posts { padding: 2rem 0 4rem; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+        @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .card { border: 1px solid var(--border); background: var(--surface); border-radius: 14px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; box-shadow: 0 2px 8px rgba(255,255,255,.03); }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(255,255,255,.08); }
+        .thumb { aspect-ratio: 16 / 9; background: #111827; overflow: hidden; }
+        .thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .card-body { padding: 1.25rem; }
+        .card h3 { margin: 0 0 .5rem; font-size: 1.125rem; letter-spacing: -0.01em; color: var(--text); }
+        .card p { margin: 0 0 .75rem; color: var(--muted-text); }
+        .meta { display: flex; align-items: center; gap: .5rem; color: var(--muted-text); font-size: .875rem; }
+        .avatar { width: 28px; height: 28px; border-radius: 999px; object-fit: cover; }
+        .dot { width: 4px; height: 4px; background: var(--muted-text); border-radius: 999px; display: inline-block; }
+
+        .footer { border-top: 1px solid var(--border); padding: 2rem 0; color: var(--muted-text); }
+        .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    </style>
+
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="brand"><a href="/">winter soldier</a></div>
+            <nav class="nav" aria-label="Primary">
+                <a href="#">Product</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a class="login-btn" href="#">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Blog</h1>
+                <p>Our latest web design tips, tricks, insights, and resources, hot off the presses.</p>
+            </div>
+        </section>
+
+        <section class="posts">
+            <div class="container">
+                <div class="grid">
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/boundaries.svg" alt="Self-care and boundaries illustration" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog1.html">
+                                <h3>The Power Of Saying No: How Boundaries Changed My Life</h3>
+                                <p>Saying no didn't come naturally. With each uncomfortable "no," I noticed something: the world didn't end.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=5" alt="Kate avatar">
+                                    <span>Kate</span>
+                                    <span class="dot"></span>
+                                    <span>25 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/online-business.svg" alt="Entrepreneur working online" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog2.html">
+                                <h3>Overcoming Challenges To Make A Living Online</h3>
+                                <p>Making money online is attainable. Even if the processes are simple, you may still need help with issues.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=32" alt="Arlene avatar">
+                                    <span>Arlene McCoy</span>
+                                    <span class="dot"></span>
+                                    <span>25 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/fitness-nutrition.svg" alt="Healthy food and fitness" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog3.html">
+                                <h3>How To Exercise To Achieve Your Nutrition Goals</h3>
+                                <p>Nutrition is as important as workouts when it comes to losing fat or building muscle.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=12" alt="Ralph avatar">
+                                    <span>Ralph Edwards</span>
+                                    <span class="dot"></span>
+                                    <span>25 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/javascript.svg" alt="Modern JavaScript coding" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog4.html">
+                                <h3>Mastering Modern JavaScript: ES6+ Features You Need</h3>
+                                <p>From async/await to destructuring, explore the powerful features that make JavaScript development more efficient.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=8" alt="Sarah avatar">
+                                    <span>Sarah Chen</span>
+                                    <span class="dot"></span>
+                                    <span>23 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/team-collaboration.svg" alt="High-performance team collaboration" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog5.html">
+                                <h3>Building High-Performance Teams: Lessons from Silicon Valley</h3>
+                                <p>What separates good teams from great ones? Insights from leading tech companies and startup culture.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=15" alt="Marcus avatar">
+                                    <span>Marcus Johnson</span>
+                                    <span class="dot"></span>
+                                    <span>21 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="thumb">
+                            <img src="/img/remote-work.svg" alt="Remote work setup" loading="lazy">
+                        </div>
+                        <div class="card-body">
+                            <a href="blog6.html">
+                                <h3>The Future of Remote Work: Tools and Strategies for 2025</h3>
+                                <p>As remote work becomes the norm, discover the essential tools and practices for staying productive and connected.</p>
+                                <div class="meta">
+                                    <img class="avatar" src="https://i.pravatar.cc/56?img=22" alt="Emma avatar">
+                                    <span>Emma Rodriguez</span>
+                                    <span class="dot"></span>
+                                    <span>19 January 2020</span>
+                                </div>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© <span id="year"></span> Minimal Blog</span>
+            <span>Built with semantic HTML and modern CSS</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

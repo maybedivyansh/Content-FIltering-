@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Mastering Modern JavaScript: ES6+ Features You Need — Winter Soldier</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --surface: #000000;
+            --text: #ffffff;
+            --muted-text: #d1d5db;
+            --border: #1f2937;
+            --link: #ffffff;
+            --brand: #ffffff;
+            --accent: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000000;
+                --surface: #000000;
+                --text: #ffffff;
+                --muted-text: #d1d5db;
+                --border: #1f2937;
+                --link: #ffffff;
+                --brand: #ffffff;
+                --accent: #ffffff;
+            }
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji"; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+        img, svg { display: block; max-width: 100%; }
+        a { color: var(--link); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .container { width: 100%; max-width: 74rem; margin: 0 auto; padding: 0 1rem; }
+        .header { position: sticky; top: 0; background: color-mix(in oklab, var(--bg) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); }
+        .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+        .brand { font-weight: 800; letter-spacing: -0.02em; font-size: 1.125rem; color: var(--brand); }
+        .brand a { color: inherit; }
+        .nav { display: flex; align-items: center; gap: 1rem; }
+        .nav a { color: var(--muted-text); }
+        .login-btn { background: transparent; color: var(--accent); padding: .5rem .9rem; border-radius: 10px; border: 1px solid var(--accent); font-weight: 700; }
+        .login-btn:hover { background: var(--accent); color: #000; text-decoration: none; }
+
+        .article { padding: 2rem 0 4rem; }
+        .article-header { margin-bottom: 2rem; }
+        .article-meta { display: flex; align-items: center; gap: .5rem; color: var(--muted-text); font-size: .875rem; margin-bottom: 1rem; }
+        .avatar { width: 32px; height: 32px; border-radius: 999px; object-fit: cover; }
+        .dot { width: 4px; height: 4px; background: var(--muted-text); border-radius: 999px; display: inline-block; }
+        .article-title { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: 0 0 1rem; letter-spacing: -0.02em; }
+        .article-excerpt { font-size: 1.125rem; color: var(--muted-text); margin-bottom: 2rem; }
+        .article-content { max-width: 65ch; line-height: 1.7; }
+        .article-content h2 { font-size: 1.5rem; margin: 2rem 0 1rem; }
+        .article-content p { margin: 0 0 1.5rem; }
+        .article-content blockquote { border-left: 3px solid var(--accent); padding-left: 1rem; margin: 2rem 0; font-style: italic; color: var(--muted-text); }
+        .back-link { display: inline-flex; align-items: center; gap: .5rem; color: var(--muted-text); margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <div class="brand"><a href="index.html">winter soldier</a></div>
+            <nav class="nav" aria-label="Primary">
+                <a href="#">Product</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a class="login-btn" href="#">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="article">
+        <div class="container">
+            <a href="index.html" class="back-link">← Back to Blog</a>
+            
+            <article>
+                <header class="article-header">
+                    <div class="article-meta">
+                        <img class="avatar" src="https://i.pravatar.cc/56?img=8" alt="Sarah avatar">
+                        <span>Sarah Chen</span>
+                        <span class="dot"></span>
+                        <span>23 January 2020</span>
+                    </div>
+                    <h1 class="article-title">Mastering Modern JavaScript: ES6+ Features You Need</h1>
+                    <p class="article-excerpt">From async/await to destructuring, explore the powerful features that make JavaScript development more efficient.</p>
+                </header>
+
+                <div class="article-content">
+                    <p>I've been coding JavaScript for over a decade, and I've seen the dark side of the tech industry that most tutorials don't cover. While ES6+ features are powerful, they're also being used to mask deeper problems in software development.</p>
+
+                    <h2>The Burnout Epidemic</h2>
+                    <p>JavaScript developers are burning out at an alarming rate. The constant pressure to learn new frameworks, the unrealistic deadlines, and the "move fast and break things" mentality are destroying people's mental health.</p>
+
+                    <p>I've worked at companies where developers were expected to work 80-hour weeks, skip weekends, and sacrifice their personal lives for the sake of shipping features. When someone would complain about the workload, they'd be labeled as "not passionate enough" or "not a team player."</p>
+
+                    <blockquote>"If you can't handle the pace, maybe you're not cut out for this industry," my former CTO told me when I asked for reasonable working hours.</blockquote>
+
+                    <h2>The Framework Churn Problem</h2>
+                    <p>Every six months, there's a new "revolutionary" JavaScript framework that promises to solve all our problems. React, Vue, Angular, Svelte, Solid, Qwik—the list goes on. Companies jump from one to another, leaving developers constantly playing catch-up.</p>
+
+                    <p>This framework churn isn't driven by technical necessity. It's driven by marketing, hype, and the need for developers to stay "relevant" in a job market that values novelty over stability.</p>
+
+                    <p>I've seen teams rewrite entire applications three times in two years, not because the old code was bad, but because some executive read an article about the "next big thing" and wanted to be trendy.</p>
+
+                    <h2>The Ageism Crisis</h2>
+                    <p>Tech companies are obsessed with youth. I've been in interviews where I was asked if I could "keep up with the young developers" or if I was "too old to learn new technologies." I'm 35.</p>
+
+                    <p>Companies prefer to hire recent graduates who will work long hours for lower pay, rather than experienced developers who know how to write maintainable code. The result is a constant cycle of inexperienced developers making the same mistakes over and over.</p>
+
+                    <p>I've seen 50-year-old developers with 20 years of experience being passed over for 22-year-olds who just graduated from a coding bootcamp. The industry values energy over wisdom, and it's hurting software quality.</p>
+
+                    <h2>The Imposter Syndrome Trap</h2>
+                    <p>Every JavaScript developer I know struggles with imposter syndrome. The constant stream of new technologies, the pressure to be an expert in everything, and the toxic comparison culture on social media create a perfect storm of self-doubt.</p>
+
+                    <p>Developers spend hours on platforms like Twitter and Reddit, comparing themselves to others who seem to know everything. What they don't see is that many of these "experts" are faking it, posting about technologies they barely understand.</p>
+
+                    <p>The truth is, no one knows everything. The JavaScript ecosystem is too vast and changes too quickly for anyone to be an expert in all of it. But the industry creates this illusion that you need to be perfect to be valuable.</p>
+
+                    <h2>The Code Quality Crisis</h2>
+                    <p>Modern JavaScript features like async/await and destructuring are powerful, but they're also being used to write increasingly complex and unmaintainable code. Developers are using these features to show off rather than solve real problems.</p>
+
+                    <p>I've seen codebases where every function is an async function, even when it doesn't need to be. I've seen destructuring used to the point where the code becomes unreadable. These features are tools, not toys.</p>
+
+                    <p>The obsession with "clean code" and "best practices" has become a religion, with developers spending more time arguing about code style than writing working software.</p>
+
+                    <h2>The Interview Hell</h2>
+                    <p>JavaScript job interviews have become increasingly absurd. Companies expect candidates to solve complex algorithmic problems on a whiteboard, even though most JavaScript development involves building user interfaces and integrating APIs.</p>
+
+                    <p>I've been asked to implement sorting algorithms from scratch, solve brain teasers, and debug code I've never seen before—all while being watched by multiple people. It's like being asked to perform surgery while someone critiques your technique.</p>
+
+                    <p>The interview process selects for people who are good at interviews, not necessarily good at writing maintainable code. Some of the best developers I know struggle with these types of interviews.</p>
+
+                    <h2>The Remote Work Reality</h2>
+                    <p>Remote work was supposed to solve work-life balance issues, but it's actually made things worse for many developers. Companies now expect you to be available 24/7, and the line between work and personal time has completely disappeared.</p>
+
+                    <p>I've received Slack messages at 11 PM on weekends, been expected to attend meetings at 6 AM, and been judged for not responding to emails within minutes. Remote work has become a way for companies to extract more labor without providing more compensation.</p>
+
+                    <p>The "flexibility" of remote work is a one-way street. You're expected to be flexible with your time, but companies are not flexible with their expectations.</p>
+
+                    <h2>What Actually Matters</h2>
+                    <p>After years in the industry, here's what I've learned actually matters:</p>
+
+                    <p>1. Write code that other people can understand and maintain.</p>
+                    <p>2. Focus on solving real problems, not implementing trendy features.</p>
+                    <p>3. Set boundaries with your work and stick to them.</p>
+                    <p>4. Don't let the industry's obsession with youth and novelty make you feel inadequate.</p>
+                    <p>5. Remember that you're a human being, not a coding machine.</p>
+
+                    <h2>The Bottom Line</h2>
+                    <p>Modern JavaScript features are powerful tools, but they're not a substitute for good software engineering practices. The real challenges in JavaScript development aren't technical—they're cultural and organizational.</p>
+
+                    <p>Focus on writing maintainable code, setting healthy boundaries, and working for companies that value your humanity as much as your technical skills. The industry needs to change, but until it does, protect yourself.</p>
+
+                    <p>And remember: you don't need to know every new framework or feature to be a good developer. You need to know how to solve problems and write code that other people can work with.</p>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
